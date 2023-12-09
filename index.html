@@ -9,9 +9,16 @@
 	<body class="flex min-h-screen bg-base-200">
 		<!-- sidebar section -->
 		<div
-			class="sticky h-[100vh] top-0 flex flex-col p-10 py-10 border sidebar bg-base-100"
+			class="absolute translate-x-[-100%] lg:translate-x-0 lg:sticky h-[100vh] top-0 z-[100] flex flex-col p-10 py-10 border sidebar bg-base-100"
 		>
-			<img src="./img/logo.png" class="w-fit" alt="" />
+			<div class="flex justify-between">
+				<img src="./img/logo.png" class="w-fit h-fit" alt="" />
+				<button
+					class="btn btn-sm lg:hidden btn-outline btn-primary sidebar-close"
+				>
+					<i class="bi bi-x"></i>
+				</button>
+			</div>
 			<ul class="flex flex-col mt-10 font-medium text-base-300 gap-y-5">
 				<li class="p-2 ps-0">
 					<a href="./index.html" class="flex items-center gap-x-3">
@@ -65,26 +72,41 @@
 		</div>
 		<!-- main body section -->
 		<div class="main-body">
-			<div class="w-full bg-base-100 h-[10vh] flex justify-end px-10">
-				<div class="flex items-center gap-x-3">
-					<img src="./img/pro-pic.png" class="w-10 h-10 rounded-full" alt="" />
-					<p class="font-semibold">Admin</p>
+			<div class="w-full bg-base-100 h-[10vh] flex justify-end lg:px-10 px-5">
+				<div class="flex items-center justify-between w-full lg:justify-end">
+					<button
+						class="btn btn-sm lg:hidden sidebar-opener btn-outline btn-primary"
+					>
+						<i class="bi bi-justify"></i>
+					</button>
+					<div class="flex items-center gap-x-3">
+						<img
+							src="./img/pro-pic.png"
+							class="w-10 h-10 rounded-full"
+							alt=""
+						/>
+						<p class="font-semibold">Admin</p>
+					</div>
 				</div>
 			</div>
-			<div class="p-10">
+			<div class="flex flex-col p-5 lg:p-10">
 				<!-- statistics section -->
-				<div class="grid grid-cols-3 p-10 text-white bg-primary rounded-xl">
-					<div class="flex flex-col justify-center border-white border-e">
+				<div
+					class="grid p-5 text-white lg:p-10 lg:grid-cols-3 bg-primary rounded-xl"
+				>
+					<div
+						class="flex flex-col justify-center py-5 border-b border-white lg:border-b-0 lg:border-e"
+					>
 						<p class="text-sm">Total App User</p>
 						<p class="text-4xl font-bold">256,000</p>
 					</div>
 					<div
-						class="flex flex-col items-center justify-center p-5 border-white border-e"
+						class="flex flex-col justify-center px-0 py-5 border-b border-white lg:px-5 lg:p-5 lg:items-center lg:border-b-0 lg:border-e"
 					>
 						<p class="text-sm">Total Premium Check User</p>
 						<p class="text-4xl font-bold">2,00,000</p>
 					</div>
-					<div class="flex flex-col items-end justify-center px-10">
+					<div class="flex flex-col justify-center py-5 lg:px-10 lg:items-end">
 						<div>
 							<p class="text-sm">Total Premium Buy Button Click</p>
 							<p class="text-4xl font-bold">56,000</p>
@@ -94,7 +116,7 @@
 
 				<!-- pagination section -->
 				<div
-					class="flex flex-col items-center justify-between p-5 mt-5 lg:flex-row gap-y-5"
+					class="flex flex-col items-center justify-between order-last p-5 mt-5 lg:flex-row gap-y-5 lg:order-none lg:mt-0"
 				>
 					<p class="flex items-center text-base-400 gap-x-2">
 						Showing of 20 of 1200 users
@@ -114,14 +136,16 @@
 				</div>
 
 				<!-- filter section -->
-				<div class="flex flex-col justify-end gap-y-2 lg:flex-row">
-					<select class="bg-transparent select focus:outline-none">
+				<div class="flex flex-col justify-end mt-5 lg:mt-0 gap-y-2 lg:flex-row">
+					<select
+						class="bg-transparent border-gray-300 select select-bordered focus:outline-none"
+					>
 						<option disabled selected>Filter by data range</option>
 					</select>
 				</div>
 
 				<!-- table section -->
-				<div class="mt-10 bg-base-100 rounded-xl">
+				<div class="mt-5 lg:mt-10 bg-base-100 rounded-xl">
 					<div class="overflow-x-auto rounded-lg bg-base-100">
 						<table class="table table-lg border-[#d1d1d1]">
 							<!-- head -->

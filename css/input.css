@@ -12,11 +12,11 @@
 }
 
 .sidebar {
-	width: 20%;
+	@apply lg:w-[20%] w-[100%] duration-150;
 }
 
 .main-body {
-	width: 80%;
+	@apply w-[80%] w-[100%];
 }
 
 .sidebar i {

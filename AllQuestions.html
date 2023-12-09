@@ -9,9 +9,16 @@
 	<body class="flex min-h-screen bg-base-200">
 		<!-- sidebar section -->
 		<div
-			class="sticky h-[100vh] top-0 flex flex-col p-10 py-10 border sidebar bg-base-100"
+			class="absolute translate-x-[-100%] lg:translate-x-0 lg:sticky h-[100vh] top-0 z-[100] flex flex-col p-10 py-10 border sidebar bg-base-100"
 		>
-			<img src="./img/logo.png" class="w-fit" alt="" />
+			<div class="flex justify-between">
+				<img src="./img/logo.png" class="w-fit h-fit" alt="" />
+				<button
+					class="btn btn-sm lg:hidden btn-outline btn-primary sidebar-close"
+				>
+					<i class="bi bi-x"></i>
+				</button>
+			</div>
 			<ul class="flex flex-col mt-10 font-medium text-base-300 gap-y-5">
 				<li class="p-2 ps-0">
 					<a href="./index.html" class="flex items-center gap-x-3">
@@ -65,17 +72,28 @@
 		</div>
 		<!-- main body section -->
 		<div class="relative overflow-x-hidden main-body">
-			<div class="w-full bg-base-100 h-[10vh] flex justify-end px-10">
-				<div class="flex items-center gap-x-3">
-					<img src="./img/pro-pic.png" class="w-10 h-10 rounded-full" alt="" />
-					<p class="font-semibold">Admin</p>
+			<div class="w-full bg-base-100 h-[10vh] flex justify-end lg:px-10 px-5">
+				<div class="flex items-center justify-between w-full lg:justify-end">
+					<button
+						class="btn btn-sm lg:hidden sidebar-opener btn-outline btn-primary"
+					>
+						<i class="bi bi-justify"></i>
+					</button>
+					<div class="flex items-center gap-x-3">
+						<img
+							src="./img/pro-pic.png"
+							class="w-10 h-10 rounded-full"
+							alt=""
+						/>
+						<p class="font-semibold">Admin</p>
+					</div>
 				</div>
 			</div>
-			<div class="p-10">
+			<div class="flex flex-col p-5 lg:p-10">
 				<div class="flex justify-between">
 					<p class="text-3xl font-semibold text-base-300">Questions</p>
 					<button
-						class="flex items-center px-10 text-white gap-x-3 btn btn-primary addTopicOpen"
+						class="flex items-center text-white lg:px-10 gap-x-3 btn btn-primary addTopicOpen"
 					>
 						<i class="bi bi-plus"></i>
 						<p>Add Question</p>
@@ -97,7 +115,7 @@
 				</div>
 				<!-- pagination section -->
 				<div
-					class="flex flex-col items-center justify-between lg:flex-row gap-y-5"
+					class="flex flex-col items-center justify-between order-last mt-10 lg:order-none lg:mt-0 lg:flex-row gap-y-5"
 				>
 					<p class="flex items-center text-base-400 gap-x-2">
 						Showing of 20 of 1200 users
